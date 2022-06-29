@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}LigueMembre index{% endblock %}
+
+{% block body %}
+    <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/f/fe/Logo_Betclic_2019.svg/1200px-Logo_Betclic_2019.svg.png">
+    <h1>Notre site de paris pour les nuls</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for ligue_membre in ligue_membres %}
+            <tr>
+                <td>{{ ligue_membre.id }}</td>
+                <td>
+                    <a href="{{ path('ligue_membre_show', {'id': ligue_membre.id}) }}">show</a>
+                    <a href="{{ path('ligue_membre_edit', {'id': ligue_membre.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="2">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('ligue_membre_new') }}">Create new</a>
+{% endblock %}

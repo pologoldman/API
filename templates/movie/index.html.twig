@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des films{% endblock %}
+
+{% block body %}
+    <h1>Liste des films</h1>
+
+    <table>
+        <tr>
+            <th>Ligue</th>
+
+        </tr>
+
+        {% for ligue in ligues %}
+            <tr>
+                <td>{{ ligue.nom }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des films{% endblock %}
+
+{% block body %}
+  <h1>Liste des films</h1>
+
+  <table>
+    <tr>
+      <th>Nom</th>
+      <th>Prix</th>
+      <th>Actions</th>
+    </tr>
+
+      <tr>
+        <td>{{ movie.name }}</td>
+        <td>{{ movie.price }}</td>
+        <td><a href="{{ path('movie_index', {'id': movie.id}) }}">Retour</a></td>
+      </tr>
+  </table>
+{% endblock %}

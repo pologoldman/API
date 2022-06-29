@@ -55,3 +55,4 @@ docker compose exec php bin/console make:user
 docker compose exec php bin/console make:auth
 docker compose exec php bin/console s:hash# api
 # api
+# api
